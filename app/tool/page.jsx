@@ -7,6 +7,7 @@ import "@styles/Tool.css";
 import LoaderSTD from "@components/Loader_std";
 import { set } from "mongoose";
 import StarRating from "@components/StarRating";
+import Report from "@components/Report";
 
 const Tool = () => {
   // let created = "";
@@ -34,6 +35,8 @@ const Tool = () => {
   // Final Result
   const [final_result, setFinalResult] = useState("Safe");
   const [threat_level, setThreatLevel] = useState("Low");
+  //report form
+  const [showReport, setShowReport] = useState(false);
 
   //fetch server
   //domain analysis
@@ -257,6 +260,22 @@ const Tool = () => {
       <div className="section-1-tool" onChange={handleSearchSubmit}>
         <Check defaultUrl={url} onChange={handleSearchSubmit} />
       </div>
+      {showReport ? (
+        <div className="report-bkgrnd">
+          <div className="report-container">
+            <div className="close-btn" onClick={() => setShowReport(false)}>
+              <i class="fa-solid fa-xmark" style={{ color: "#59e32a" }}></i>
+            </div>
+            <h1>Report</h1>
+
+            <div className="url-box open-sans-200">
+              <div className="url-label">URL :</div>
+              <div className="url-to-report">{url}</div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      ) : null}
       {url !== "" ? (
         <div className="section-2 open-sans-200">
           <div className="checklist">
@@ -381,6 +400,7 @@ const Tool = () => {
                   <div
                     className="threat-tags unsafe"
                     style={{ cursor: "pointer" }}
+                    onClick={() => setShowReport(true)}
                   >
                     Report
                   </div>
