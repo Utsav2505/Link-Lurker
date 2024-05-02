@@ -16,9 +16,9 @@ const About = () => {
     coffee: "https://buymeacoffee.com/https://buymeacoffee.com/utsav.maji",
   };
   const kinshuk_links = {
-    image: "",
+    image: "https://i.imgur.com/fa8EgnQ.jpg",
     git: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/kinshuk-saini-922b90275/",
     coffee: "",
   };
   const nalin_links = {
