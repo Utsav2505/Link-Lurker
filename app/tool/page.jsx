@@ -8,6 +8,7 @@ import LoaderSTD from "@components/Loader_std";
 import { set } from "mongoose";
 import StarRating from "@components/StarRating";
 import Report from "@components/Report";
+import { Suspense } from "react";
 
 const Tool = () => {
   // let created = "";
@@ -265,7 +266,7 @@ const Tool = () => {
   };
 
   return (
-    <>
+    <Suspense>
       <div className="section-1-tool" onChange={handleSearchSubmit}>
         <Check defaultUrl={url} onChange={handleSearchSubmit} />
       </div>
@@ -474,7 +475,7 @@ const Tool = () => {
       ) : (
         <div className="empty-text open-sans-500">Enter a URL</div>
       )}
-    </>
+    </Suspense>
   );
 };
 
