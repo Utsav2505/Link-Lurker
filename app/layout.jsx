@@ -1,4 +1,6 @@
 import Provider from "@components/Provider";
+import Navbar from "@components/Navbar";
+import "@styles/global.css";
 
 export const metadata = {
   title: "Link Lurker",
@@ -9,17 +11,26 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <head>
-        {/* <link
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        /> */}
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+        <script
+          src="https://kit.fontawesome.com/429c6af039.js"
+          crossorigin="anonymous"
+        ></script>
       </head>
       <body className="wholeBody">
         <Provider>
           <div>
             <main>
-              {/* <Header /> */}
-              <div style={{ width: "100%", height: "4vw" }}></div>
+              <Navbar />
               {children}
             </main>
           </div>
