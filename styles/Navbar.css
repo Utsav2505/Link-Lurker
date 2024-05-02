@@ -87,6 +87,16 @@
     transform: translateY(20%);
     transition: transform 0.3s;
 }
+@keyframes slide-in {
+  from{
+    transform: translate(-65%, 80%);
+    opacity: 0;
+  }
+  to{
+    transform: translate(-65%, 100%);
+    opacity: 1;
+  }
+}
 .services-menu{
     position: absolute;
     left: 50%;
@@ -98,6 +108,8 @@
     background-color: #065143;
     border-radius: 0.8vw;
     padding: 1vh 1vw;
+    opacity: 1;
+    animation: slide-in 0.2s ease-out;
 }
 .services-menu a{
     cursor: pointer;
@@ -160,7 +172,16 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   } */
-
+  @keyframes slide-in-2 {
+    from{
+      transform: translate(0%, 80%);
+      opacity: 0;
+    }
+    to{
+      transform: translate(0%, 100%);
+      opacity: 1;
+    }
+  }
   .profile-menu{
     position: absolute;
     right: 0;
@@ -172,6 +193,8 @@
     background-color: #065143;
     border-radius: 0.8vw;
     padding: 1vh 1vw;
+    opacity: 1;
+    animation: slide-in-2 0.2s ease-out;
   }
   .profile-menu a{
     cursor: pointer;

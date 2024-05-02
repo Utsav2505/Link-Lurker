@@ -255,6 +255,15 @@ const Tool = () => {
     console.log("URL:", searchParams.get("url"));
   };
 
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+  const handleSubmit = () => {
+    setShowReport(false);
+  };
+
   return (
     <>
       <div className="section-1-tool" onChange={handleSearchSubmit}>
@@ -266,13 +275,56 @@ const Tool = () => {
             <div className="close-btn" onClick={() => setShowReport(false)}>
               <i class="fa-solid fa-xmark" style={{ color: "#59e32a" }}></i>
             </div>
-            <h1>Report</h1>
+            <h1 className="open-sans-500">Report</h1>
 
             <div className="url-box open-sans-200">
               <div className="url-label">URL :</div>
               <div className="url-to-report">{url}</div>
             </div>
-            <div></div>
+            <div>
+              <div className="report-label open-sans-300">Report as :</div>
+              <div className="report-type open-sans-400">
+                <input
+                  className="radio-inpt"
+                  type="radio"
+                  value="unsafe"
+                  name="report-type"
+                  id="radio1"
+                  onChange={handleChange}
+                />
+                <label for="radio1" className="radio-label label-red">
+                  Unsafe
+                </label>
+                <input
+                  className="radio-inpt"
+                  type="radio"
+                  value="suspicious"
+                  name="report-type"
+                  id="radio2"
+                  onChange={handleChange}
+                />
+                <label for="radio2" className="radio-label">
+                  Suspicious
+                </label>
+                <input
+                  className="radio-inpt"
+                  type="radio"
+                  value="safe"
+                  name="report-type"
+                  id="radio3"
+                  onChange={handleChange}
+                />
+                <label for="radio3" className="radio-label">
+                  Safe
+                </label>
+              </div>
+            </div>
+            <div
+              className="submit-btn safe open-sans-400"
+              onClick={handleSubmit}
+            >
+              Submit
+            </div>
           </div>
         </div>
       ) : null}
@@ -326,8 +378,10 @@ const Tool = () => {
                 ) : (
                   <div
                     className={
-                      domain_analysis_score <= 3
+                      domain_analysis_score < 3
                         ? "side-tags unsafe open-sans-400"
+                        : domain_analysis_score == 3
+                        ? "side-tags suspicious open-sans-400 domain-score-sus"
                         : "side-tags safe open-sans-400"
                     }
                   >

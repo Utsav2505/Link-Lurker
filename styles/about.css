@@ -1,0 +1,78 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 20vw;
+    height:50vh;
+    border: 0.3vw solid #57CF55;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: relative;
+}
+.card-img{
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    border-bottom: 0.3vw solid #57CF55;
+
+}
+.links-row{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 4vw;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 1vw;
+    left: 50%;
+    transform: translateX(-32%);
+}
+.link-icon{
+    position: absolute;
+    bottom: 0;
+    width: 2vw;
+    cursor: pointer;
+    /* transform: translateX(100%); */
+}
+.open-sans-500 {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+.card-name{
+    font-size: 2vw;
+    color: white;
+    position: absolute;
+    bottom: 8vh;
+}
+.author-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+    margin-top: 4vh;
+    width: 100%;
+    margin: 0 auto;
+}
+.about-head{
+    color: white;
+    margin: 0 auto;
+    /* width: 100%; */
+    margin-bottom: 4vh;
+}
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10vh;
+}

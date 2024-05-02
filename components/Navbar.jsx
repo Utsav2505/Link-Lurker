@@ -71,7 +71,7 @@ const Navbar = () => {
             className={serviceHovered ? "arrow-hover" : "arrow"}
           />
         </a>
-        <Link href="/">About us</Link>
+        <Link href="/about">About us</Link>
       </div>
       {(services || serviceHovered) && (
         <div className="services-menu open-sans-400">
